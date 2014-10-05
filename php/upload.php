@@ -22,6 +22,7 @@
 */
 include '../system.inc.php';
 include 'functions.inc.php';
+include '../3rdparty/Nette/Strings.php';
 
 verifyAction('UPLOAD');
 checkAccess('UPLOAD');
@@ -34,7 +35,7 @@ if(is_dir(fixPath($path))){
     $errors = $errorsExt = array();
     foreach($_FILES['files']['tmp_name'] as $k=>$v){
       $filename = $_FILES['files']['name'][$k];
-      $filename = RoxyFile::MakeUniqueFilename(fixPath($path), $filename);
+      $filename = RoxyFile::MakeUniqueFilename(fixPath($path), Nette\Utils\Strings::webalize($filename, '.'));
       $filePath = fixPath($path).'/'.$filename;
       if(!RoxyFile::CanUploadFile($filename))
         $errorsExt[] = $filename;
