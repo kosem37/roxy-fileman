@@ -43,7 +43,7 @@
       <input type="button" id="btnDeleteDir" value="Delete" title="Delete selected directory" onclick="deleteDir()" data-lang-v="DeleteDir" data-lang-t="T_DeleteDir" />
     </div>
     <div id="pnlLoadingDirs">
-       <span>Loading directories...</span><br>
+       <span data-lang="LoadingDirectories">Loading directories...</span><br>
        <img src="images/loading.gif" title="Loading directory tree, please wait...">
     </div>
     <div class="scrollPane">
@@ -61,7 +61,7 @@
       <input type="button" id="btnDeleteFile" value="Delete" title="Delete selected file" onclick="deleteFile()" data-lang-v="DeleteFile" data-lang-t="T_DeleteFile" />
       <input type="button" id="btnSelectFile" value="Select" title="Select highlighted file" onclick="setFile()" data-lang-v="SelectFile" data-lang-t="T_SelectFile" />
       <br>
-      Order by:
+      <span data-lang="OrderBy">Order by</span>:
       <select id="ddlOrder" onchange="sortFiles()">
         <option value="name" data-lang="Name_asc">&uarr;&nbsp;&nbsp;Name</option>
         <option value="size" data-lang="Size_asc">&uarr;&nbsp;&nbsp;Size</option>
